@@ -49,6 +49,10 @@ console.log(book2); // Book {title: "Book Two", author: "Jane Doe", year: "2021
 //     @year = year
 //   end
 
+//   def get_summary
+//     "#{self.title} was written by #{self.author} in #{self.year}"
+//   end
+
 //   def revise(newyear)
 //     self.year = newyear
 //     self.singleton_class.send(:attr_accessor, :revised)
