@@ -45,6 +45,7 @@ console.log(book2); // Book {title: "Book Two", author: "Jane Doe", year: "2021
 
 
 
+
 // Ruby equivalent
 
 // class Book
