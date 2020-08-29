@@ -6,6 +6,10 @@ function Book(title, author, year) {
 	this.year = year;
 }
 
+Book.topBookStore = function() {
+  return 'Barnes & Noble';
+};
+
 Book.prototype.getSummary = function() {
 	return `${this.title} was written by ${this.author} in ${this.year}`
 }
@@ -17,6 +21,9 @@ function Magazine(title, author, year, month) {
 	this.month = month;
 }
 
+// Inherit static(class) methods of Book
+Object.assign(Magazine, Book);
+
 // Inherit Prototype methods of Book (so you can call getSummary() on Magazine objects)
 Magazine.prototype = Object.create(Book.prototype);
 
@@ -27,6 +34,8 @@ Magazine.prototype.constructor = Magazine;
 const mag1 = new Magazine('Mag One', 'JJ', '2018', 'Jan')
 
 console.log(mag1); // Magazine {title: "Mag One", author: "JJ", year: "2018", month: "Jan"}
+
+console.log(Magazine.topBookStore()); // Barnes & Noble
 
 
 
@@ -49,6 +58,10 @@ console.log(mag1); // Magazine {title: "Mag One", author: "JJ", year: "2018", m
 //     @year = year
 //   end
 
+//   def self.top_book_store
+//     "Barnes & Noble"
+//   end
+
 //   def get_summary
 //     "#{self.title} was written by #{self.author} in #{self.year}"
 //   end
@@ -69,4 +82,6 @@ console.log(mag1); // Magazine {title: "Mag One", author: "JJ", year: "2018", m
 // mag1 = Magazine.new('Mag One', 'JJ', '2018', 'Jan')
 
 // puts mag1.inspect
+
+// puts Magazine.top_book_store
 

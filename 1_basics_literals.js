@@ -14,7 +14,7 @@
 // console.log(navigator.appVersion); // naviagtor is an object with appVersion as a property
 
 
-// Object Literal
+// Object Literal - this "acts" like a class
 const book1 = {
 	title: 'Book One',
 	author: 'John Doe',

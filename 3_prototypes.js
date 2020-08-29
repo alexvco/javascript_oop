@@ -6,7 +6,12 @@ function Book(title, author, year) {
 	this.year = year;
 }
 
-// getSummary will be under __proto__ in chrome dev console
+// static (class) method
+Book.topBookStore = function() {
+  return 'Barnes & Noble';
+};
+
+// getSummary is an instance method and will be under __proto__ in chrome dev console
 Book.prototype.getSummary = function() {
 	return `${this.title} was written by ${this.author} in ${this.year}`
 }
@@ -22,6 +27,8 @@ Book.prototype.revise = function(newYear) {
 const book1 = new Book('Book One', 'John Doe', '2020');
 const book2 = new Book('Book Two', 'Jane Doe', '2021');
 
+
+console.log(Book.topBookStore()); // Barnes & Noble
 
 console.log(book2); // Book {title: "Book Two", author: "Jane Doe", year: "2021"}
 book2.revise('2021-01')
@@ -49,6 +56,10 @@ console.log(book2); // Book {title: "Book Two", author: "Jane Doe", year: "2021
 //     @year = year
 //   end
 
+//   def self.top_book_store
+//     "Barnes & Noble"
+//   end
+
 //   def get_summary
 //     "#{self.title} was written by #{self.author} in #{self.year}"
 //   end
@@ -63,6 +74,8 @@ console.log(book2); // Book {title: "Book Two", author: "Jane Doe", year: "2021
 
 // book1 = Book.new('Book One', 'John Doe', '2020')
 // book2 = Book.new('Book Two', 'Jane Doe', '2021')
+
+// puts Book.top_book_store # Barnes & Noble
 
 // puts book2.inspect # #<Book:0x00007fcb818a96f8 @title="Book Two", @author="Jane Doe", @year="2021">
 // book2.revise('2021-01')
