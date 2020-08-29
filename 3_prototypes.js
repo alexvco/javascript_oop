@@ -1,4 +1,4 @@
-// Prototypes are essentially instance methods
+// Prototypes are essentially instance methods - ES5
 
 function Book(title, author, year) {
 	this.title = title;

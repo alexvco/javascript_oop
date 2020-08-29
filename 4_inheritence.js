@@ -1,4 +1,4 @@
-// Inheritence
+// Inheritence - ES5
 
 function Book(title, author, year) {
 	this.title = title;
