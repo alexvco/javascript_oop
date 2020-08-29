@@ -47,6 +47,7 @@ console.log(Magazine.topBookStore()); // Barnes & Noble
 
 
 
+
 // Ruby equivalent
 
 // class Book
